@@ -1,0 +1,46 @@
+.calendarContainer {
+  background: #081a35;
+  padding: 25px;
+  border-radius: 20px;
+  margin-top: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.heading {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.bookingSummary {
+  margin-top: 20px;
+  padding: 20px;
+  background: #0f274d;
+  border-radius: 12px;
+}
+
+.bookingSummary p {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.bookButton {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #fbbf24;
+  color: #081a35;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bookButton:hover {
+  transform: translateY(-2px);
+  background: #f59e0b;
+}

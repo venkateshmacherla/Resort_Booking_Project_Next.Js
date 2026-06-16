@@ -1,0 +1,210 @@
+.pageContainer {
+  width: 95%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+
+  background: linear-gradient(
+    90deg,
+    #06b6d4,
+    #3b82f6,
+    #14b8a6
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.loadingContainer {
+  text-align: center;
+  padding: 80px;
+  color: white;
+}
+
+.resortGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 30px;
+}
+
+.resortCard {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.97);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 25px;
+}
+
+.buttonContainer {
+  margin-top: auto; 
+  display: flex;
+  gap: 12px;
+}
+
+
+.resortCard:hover {
+  transform: translateY(-10px);
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.resortImage {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  background: #0f766e;
+  color: white;
+
+  padding: 8px 14px;
+  border-radius: 30px;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.cardContent {
+  padding: 25px;
+}
+
+.resortTitle {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.description {
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.detailsSection {
+  margin-bottom: 20px;
+}
+
+.detailsSection p {
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f766e !important;
+}
+
+.amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.amenityTag {
+  background: #e0f2fe;
+  color: #0369a1;
+
+  padding: 8px 14px;
+  border-radius: 20px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 12px;
+}
+
+.detailsButton,
+.bookButton {
+  flex: 1;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.detailsButton {
+  background: #1d4ed8;
+  color: white;
+}
+
+.detailsButton:hover {
+  background: #1e40af;
+}
+
+.bookButton {
+  background: #0f766e;
+  color: white;
+}
+
+.bookButton:hover {
+  background: #115e59;
+}
+
+@media screen and (max-width: 768px) {
+
+  .pageTitle {
+    font-size: 2rem;
+  }
+
+  .resortGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+  }
+
+  .resortImage {
+    height: 220px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .pageContainer {
+    width: 92%;
+  }
+
+  .resortTitle {
+    font-size: 1.4rem;
+  }
+
+  .price {
+    font-size: 1.2rem;
+  }
+
+  .cardContent {
+    padding: 18px;
+  }
+}

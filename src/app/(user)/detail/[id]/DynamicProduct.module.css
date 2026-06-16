@@ -1,0 +1,278 @@
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    background: rgba(15, 23, 42, 0.85);
+    padding: 35px;
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.category {
+    background: #0f766e;
+    color: white;
+
+    width: fit-content;
+
+    padding: 8px 15px;
+    border-radius: 20px;
+
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.title {
+    color: #5eead4;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.location {
+    font-size: 1.1rem;
+    color: #d1d5db;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    
+    color: #fbbf24;
+    margin-bottom: 20px;
+}
+
+.description {
+    line-height: 1.8;
+    color: #e5e7eb;
+    margin-bottom: 25px;
+}
+
+.details {
+    margin-bottom: 25px;
+    color: #5eead4;
+}
+
+.availability {
+    color: white;
+}
+
+.details p {
+    margin-bottom: 10px;
+}
+
+.amenities h3 {
+    margin-bottom: 15px;
+    color: #5eead4;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: #e0f2fe;
+    color: #0369a1;
+
+    padding: 8px 14px;
+    border-radius: 20px;
+
+    font-size: 0.9rem;
+}
+
+
+.loading,
+.error {
+    text-align: center;
+    padding: 100px;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .image {
+        height: 300px;
+    }
+}
+
+/* Calender Model */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+  padding: 20px;
+}
+
+.modalContent {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 100%;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+
+  animation: popupAnimation 0.3s ease;
+}
+
+.modalContent h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0a1931;
+}
+
+.closeBtn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #ff5c5c;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closeBtn:hover {
+  background: #e04848;
+}
+
+.selectedDates {
+  margin-top: 20px;
+  padding: 18px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: #ffffff;
+}
+
+.selectedDates p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  justify-content: flex-start;
+}
+
+.buttonContainer button {
+  flex: 1;
+}
+
+.calendarButton {
+  padding: 15px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #3268e8;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.calendarButton:hover {
+  background: #2456cf;
+}
+
+.bookButton {
+  padding: 15px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #168276;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bookButton:hover {
+  background: #0f6d63;
+}
+
+.bookButton:disabled {
+  background: #6b7280;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+@keyframes popupAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .buttonContainer {
+    flex-direction: column;
+  }
+
+  .modalContent {
+    padding: 15px;
+  }
+
+  .selectedDates {
+    font-size: 14px;
+  }
+}
