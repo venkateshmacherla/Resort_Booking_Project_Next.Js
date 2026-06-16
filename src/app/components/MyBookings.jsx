@@ -75,6 +75,7 @@ const MyBookings = () => {
                   width={400}
                   height={250}
                   className={styles.bookingImage}
+                  unoptimized
                 />
 
                 <div className={styles.cardContent}>
