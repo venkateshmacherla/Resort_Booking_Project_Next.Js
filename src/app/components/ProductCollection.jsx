@@ -71,6 +71,7 @@ const ProductCollection = () => {
                   width={400}
                   height={150}
                   className={styles.resortImage}
+                  unoptimized
                 />
 
                 <span className={styles.categoryBadge}>
