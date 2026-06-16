@@ -99,6 +99,7 @@ const DynamicProduct = () => {
             width={700}
             height={450}
             className={styles.image}
+            unoptimized
           />
         </div>
 
