@@ -11,13 +11,18 @@ export async function loginAction(loginDetails) {
     console.log("Login action called", loginDetails)
     
     try{
-        const response = await signIn("credentials", {
+        await signIn("credentials", {
             email: loginDetails.email,
             password: loginDetails.password,
-            redirect: false
-        })
+            redirect: false,
+        });
         return { success: true}
     } catch (error) {
-        throw new Error("Invalid email or password ")
+        console.log('Login Error:', error)
+
+        return {
+            success: false, 
+            message: "Invalid email or password", 
+        };
     }
 }

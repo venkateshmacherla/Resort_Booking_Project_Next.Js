@@ -2,16 +2,19 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import UserModel from './utils/models/User'
+import DBConnection from "./utils/config/db";
 
 export const { auth, signIn, signOut, handlers: { GET, POST } } = NextAuth({
     providers: [
         CredentialsProvider({
             name: "credentials",
             credentials: {
-                username: { label: "Username", type: "text" },
+                email: { label: "Email", type: "email" },
                 password: { label: "Password", type: "password" }
             },
             async authorize(credentials) {
+                await DBConnection();
+
                 const user = await UserModel.findOne({email: credentials.email})
                 if(!user) {
                     return null
@@ -19,7 +22,12 @@ export const { auth, signIn, signOut, handlers: { GET, POST } } = NextAuth({
                 if(credentials.password !== user.password) {
                     return null
                 }
-                return {name: user.username, email: user.email, role: user.role}
+                return {
+                    id: user._id.toString(),
+                    name: user.username,
+                    email: user.email,
+                    role: user.role,
+                };
             }
         })
     ],
